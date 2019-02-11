@@ -15,6 +15,6 @@ RUN apk add --no-cache postgresql-libs && \
     rm  -rf /tmp/* /var/cache/apk/*
 # apk del .build-deps gcc musl-dev g++ postgresql-dev jpeg-dev zlib-dev
 
-ADD supervisord.conf /ect/
+COPY supervisord.conf /ect/
 
 CMD ["python3"]
