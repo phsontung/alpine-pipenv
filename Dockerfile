@@ -10,7 +10,7 @@ COPY requirements.txt ${APP_DIR}
 
 RUN apk add --no-cache postgresql-libs && \
     apk add --no-cache --virtual .build-deps gcc g++ musl-dev postgresql-dev jpeg-dev zlib-dev &&\
-    pip install --no-cache-dir -r requirements.txt
+    pip install --no-cache-dir -r requirements.txt &&\
     rm  -rf /tmp/* /var/cache/apk/*
 # apk del .build-deps gcc musl-dev g++ postgresql-dev jpeg-dev zlib-dev
 
